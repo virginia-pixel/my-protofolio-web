@@ -1,4 +1,4 @@
-// ================= MOBILE NAVIGATION =================
+﻿// ================= MOBILE NAVIGATION =================
 const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 
@@ -26,14 +26,14 @@ const appearOptions = {
 
 const appearOnScroll = new IntersectionObserver(function(
     entries,
-    appearOnScroll
+    observer
 ) {
     entries.forEach(entry => {
         if (!entry.isIntersecting) {
             return;
         } else {
             entry.target.classList.add("show");
-            appearOnScroll.unobserve(entry.target);
+            observer.unobserve(entry.target);
         }
     });
 },
